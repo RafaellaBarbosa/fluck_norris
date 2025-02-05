@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../core/utils/app_colors.dart';
 import '../core/utils/text_styles.dart';
+import '../widgets/loading_widget.dart';
 import '../widgets/quote_widget.dart';
 
 class JokePage extends StatefulWidget {
@@ -95,7 +96,9 @@ Widget getContent(String valor, bool isloading, bool hasError) {
     return Text('Erro na busca da piada!', style: TextStyles.errorText);
   }
   if (isloading) {
-    return CircularProgressIndicator();
+    return LoadingWidget(
+      labelLoading: 'Carregando piadas lendárias...',
+    );
   }
   return QuoteWidget(joke: valor);
 }

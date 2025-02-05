@@ -4,6 +4,7 @@ import 'package:fluck_norris/core/utils/text_styles.dart';
 import 'package:fluck_norris/data/repositories/joke_repositories.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/loading_widget.dart';
 import 'joke_page.dart';
 
 class CategoriesPage extends StatefulWidget {
@@ -54,7 +55,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
             case ConnectionState.none:
               return Center(child: Text('Sem conexão'));
             case ConnectionState.waiting:
-              return Center(child: CircularProgressIndicator());
+              return LoadingWidget(
+                labelLoading: 'Carregando Categorias...',
+              );
             case ConnectionState.active:
               return Text('Conectado');
 
@@ -102,7 +105,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   ),
                 );
               } else {
-                return Text('Sem dados', );
+                return Text(
+                  'Sem dados',
+                );
               }
           }
         },

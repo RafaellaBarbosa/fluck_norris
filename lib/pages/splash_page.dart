@@ -15,7 +15,7 @@ class _SplashPageState extends State<SplashPage> {
   bool _isLogoAnimated = false;
 
   static const Duration _animationDuration = Duration(milliseconds: 500);
-  static const Duration _navigationDelay = Duration(seconds: 10);
+  static const Duration _navigationDelay = Duration(seconds: 3);
 
   @override
   void initState() {
